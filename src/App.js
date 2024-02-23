@@ -1,25 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+// import Layout from "./pages/Layout";
 
+// import Blogs from "./pages/Blogs";
+// import Contact from "./pages/Contact";
+// import NoPage from "./pages/NoPage";
+import Navbar from "./pages/Navbar";
+import Home from "./pages/HomeScreen";
 
+// https://github.com/Ade-mir/react-js-personal-portfolio/blob/main/src/Pages/Home/MyPortfolio.jsx
 function App() {
   return (
-    // dummy commit
-    <BrowserRouter>
-      <Routes>
-      <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <div className="App">
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="*" element={<div>404 Not Found</div>}></Route>
+          </Routes>
+        </div>
+      </Router>
+    </div>
+
   );
 }
 
