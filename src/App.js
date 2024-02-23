@@ -9,6 +9,7 @@ import NoPage from "./pages/NoPage";
 
 function App() {
   return (
+    // dummy commit
     <BrowserRouter>
       <Routes>
       <Route path="/" element={<Layout />}>
